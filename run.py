@@ -2,29 +2,30 @@ import numpy as np
 import wire as wire
 imgs=[]
 
+def bombconfig():
+    batteries = input('Batteries: ')
+    serial = input('Serial No.: ')
+    return batteries, serial
 
 def staticgrabimg():
-    # im = np.array(ImageGrab.grab(bbox=(320, 240, 503, 420)))
-    # im = cv2.cvtColor(im,cv2.COLOR_BGR2RGB)
     wire.solve()
-    
-# def on_press(key):
-#     if(key=='b'):
-#         print('ffff')
-        
-# def on_release(key):
-#     if key==Key.enter:
-#         print('ok')
-#         staticgrabimg()
-#     elif key.char=='p':
-#         print()
-#     if key == Key.esc:
-#         return False
 
-# with Listener(
-#         on_press=on_press,
-#         on_release=on_release) as listener:
-#     listener.join()
-staticgrabimg()
+batteries, serial = bombconfig()
+
+while(True):
+    
+    print('\n\n1- Wires')
+    print('2- Button')
+    print('0- Exit')
+    ch = int(input('Choose module: '))
+    print()
+    if(ch==1):
+        wire.solve(batteries,serial)
+    elif(ch==2):
+        print('2')
+        #button.solve()
+    elif(ch==0):
+        break
+        
 
 

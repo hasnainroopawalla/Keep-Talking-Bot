@@ -1,7 +1,6 @@
 import numpy as np
 
-serial='7H5ZW1'
-def examine(wires):
+def examine(wires, batteries, serial):
     cut=0
     print(wires)
     numwires=6-wires.count('E')
@@ -139,15 +138,16 @@ def getwirecolors():
     wires = []
 
     #Speech to Text here
-    
+
     wires.append(input('Wire 1:'))
     wires.append(input('Wire 2:'))
     wires.append(input('Wire 3:'))
     wires.append(input('Wire 4:'))
     wires.append(input('Wire 5:'))
     wires.append(input('Wire 6:'))
-    examine(wires)
+    return wires
 
 
-def solve():
-    getwirecolors()
+def solve(batteries, serial):
+    wires = getwirecolors()
+    examine(wires, batteries, serial)
