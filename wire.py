@@ -134,7 +134,7 @@ def examine(wires, batteries, serial):
     print('cut: wire at position',cut)
                 
     
-def getwirecolors():
+def getscene():
     wires = []
 
     #Speech to Text here
@@ -149,5 +149,5 @@ def getwirecolors():
 
 
 def solve(batteries, serial):
-    wires = getwirecolors()
+    wires = getscene()
     examine(wires, batteries, serial)

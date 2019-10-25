@@ -1,13 +1,15 @@
 import numpy as np
 import wire as wire
+import button as button
 imgs=[]
 
 def bombconfig():
-    batteries = input('Batteries: ')
+    batteries = int(input('Batteries: '))
     serial = input('Serial No.: ')
-    return batteries, serial
+    label = input('Label: ')
+    return batteries, serial, label
 
-batteries, serial = bombconfig()
+batteries, serial, label = bombconfig()
 
 while(True):
     
@@ -17,10 +19,9 @@ while(True):
     ch = int(input('Choose module: '))
     print()
     if(ch==1):
-        wire.solve(batteries,serial)
+        wire.solve(batteries, serial)
     elif(ch==2):
-        print('2')
-        #button.solve()
+        button.solve(batteries, serial, label)
     elif(ch==0):
         break
         
