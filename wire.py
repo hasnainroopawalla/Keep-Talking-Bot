@@ -104,67 +104,73 @@ def examine(wires):
     print('cut: wire',cut)
                 
     
-def getwirecolors(img):
-    w1 = img[30,45]
-    w2 = img[53,46]
-    w3 = img[74,46]
-    w4 = img[96,46]
-    w5 = img[118,46]
-    w6 = img[141,46]
-    w1[0],w1[2]=w1[2],w1[0]
-    w2[0],w2[2]=w2[2],w2[0]
-    w3[0],w3[2]=w3[2],w3[0]
-    w4[0],w4[2]=w4[2],w4[0]
-    w5[0],w5[2]=w5[2],w5[0]
-    w6[0],w6[2]=w6[2],w6[0]
-    w=[]
-    w.append(w1)
-    w.append(w2)
-    w.append(w3)
-    w.append(w4)
-    w.append(w5)
-    w.append(w6)
-    print(w1,w2,w3,w4,w5,w6)
+def getwirecolors():
+#     w1 = img[30,45]
+#     w2 = img[53,46]
+#     w3 = img[74,46]
+#     w4 = img[96,46]
+#     w5 = img[118,46]
+#     w6 = img[141,46]
+#     w1[0],w1[2]=w1[2],w1[0]
+#     w2[0],w2[2]=w2[2],w2[0]
+#     w3[0],w3[2]=w3[2],w3[0]
+#     w4[0],w4[2]=w4[2],w4[0]
+#     w5[0],w5[2]=w5[2],w5[0]
+#     w6[0],w6[2]=w6[2],w6[0]
+#     w=[]
+#     w.append(w1)
+#     w.append(w2)
+#     w.append(w3)
+#     w.append(w4)
+#     w.append(w5)
+#     w.append(w6)
+#     print(w1,w2,w3,w4,w5,w6)
 
-    a=img.copy()
-    a[30,45] = (0,255,0)
-    a[53,46] = (0,255,0)
-    a[74,46] = (0,255,0)
-    a[96,46] = (0,255,0)
-    a[118,46] = (0,255,0)
-    a[141,46] = (0,255,0)
+#     a=img.copy()
+#     a[30,45] = (0,255,0)
+#     a[53,46] = (0,255,0)
+#     a[74,46] = (0,255,0)
+#     a[96,46] = (0,255,0)
+#     a[118,46] = (0,255,0)
+#     a[141,46] = (0,255,0)
     
-    cv2.imshow('a',a)
-    cv2.waitKey(0)
-    wires=[]
-    white_start = (168, 163, 163)
-    white_end = (255, 255, 255)
-    blue_start = (41, 65, 204)
-    blue_end = ( 55  ,78 ,207)
-    yellow_start = (255, 236, 5)
-    yellow_end = (255, 255, 61)
-    black_start = (0, 0, 0)
-    black_end = (61, 61, 61)
-    red_start = (255, 0, 0)
-    red_end = (255, 113, 61)
+#     cv2.imshow('a',a)
+#     cv2.waitKey(0)
+#     wires=[]
+#     white_start = (168, 163, 163)
+#     white_end = (255, 255, 255)
+#     blue_start = (41, 65, 204)
+#     blue_end = ( 55  ,78 ,207)
+#     yellow_start = (255, 236, 5)
+#     yellow_end = (255, 255, 61)
+#     black_start = (0, 0, 0)
+#     black_end = (61, 61, 61)
+#     red_start = (255, 0, 0)
+#     red_end = (255, 113, 61)
 
-    for i in w:
-        if all(s <= c <= e for c, s, e in zip(i, white_start, white_end)):
-            wires.append('W')
-        elif all(s <= c <= e for c, s, e in zip(i, blue_start, blue_end)):
-            wires.append('B')
-        elif all(s <= c <= e for c, s, e in zip(i, yellow_start, yellow_end)):
-            wires.append('Y')
-        elif all(s <= c <= e for c, s, e in zip(i, red_start, red_end)):
-            wires.append('R')
-        elif i[0]>=22 and i[0]<=39 and i[1]>=22 and i[1]<=39 and i[2]>=22 and i[2]<=39:
-            wires.append('E')
-        elif all(s <= c <= e for c, s, e in zip(i, black_start, black_end)):
-            wires.append('BL')
-        else:
-            wires.append('B')
+#     for i in w:
+#         if all(s <= c <= e for c, s, e in zip(i, white_start, white_end)):
+#             wires.append('W')
+#         elif all(s <= c <= e for c, s, e in zip(i, blue_start, blue_end)):
+#             wires.append('B')
+#         elif all(s <= c <= e for c, s, e in zip(i, yellow_start, yellow_end)):
+#             wires.append('Y')
+#         elif all(s <= c <= e for c, s, e in zip(i, red_start, red_end)):
+#             wires.append('R')
+#         elif i[0]>=22 and i[0]<=39 and i[1]>=22 and i[1]<=39 and i[2]>=22 and i[2]<=39:
+#             wires.append('E')
+#         elif all(s <= c <= e for c, s, e in zip(i, black_start, black_end)):
+#             wires.append('BL')
+#         else:
+#             wires.append('B')
         
-##    print(wires)
+# ##    print(wires)
+    wires.append(input('Wire 1:'))
+    wires.append(input('Wire 2:'))
+    wires.append(input('Wire 3:'))
+    wires.append(input('Wire 4:'))
+    wires.append(input('Wire 5:'))
+    wires.append(input('Wire 6:'))
     examine(wires)
 
 
