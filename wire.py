@@ -84,7 +84,7 @@ def examine(wires):
                 if(wires[i]!='E'):
                     cut=i+1
                     break
-        elif(wires.count('BL')==0):      # Cut second wire
+        elif(wires.count('BL')==0):      # Cut secodnd wire
             f = 0
             print('3')
             for i in range(0,6):
