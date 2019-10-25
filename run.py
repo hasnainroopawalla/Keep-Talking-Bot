@@ -7,9 +7,6 @@ def bombconfig():
     serial = input('Serial No.: ')
     return batteries, serial
 
-def staticgrabimg():
-    wire.solve()
-
 batteries, serial = bombconfig()
 
 while(True):
