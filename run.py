@@ -1,9 +1,4 @@
 import numpy as np
-import cv2
-from PIL import ImageGrab
-from pynput.keyboard import Key, Listener
-import bounding_box as bb
-import ocr as ocr
 import wire as wire
 imgs=[]
 
