@@ -1,15 +1,23 @@
+import listen as listen
 import numpy as np
+import pyttsx3
+import time
+
+engine = pyttsx3.init()
 
 def release(color, text):
-    strip = input('Strip Color: ')
-    if(strip=='B'):
-        print('Timer 4')
-    elif(strip=='W'):
-        print('Timer 1')
-    elif(strip=='Y'):
-        print('Timer 5')
+    time.sleep(5)
+    strip = listen.gettext()
+    if(strip=='blue'):
+        timer = '4'
+    elif(strip=='white'):
+        timer = '1'
+    elif(strip=='yellow'):
+        timer = '5'
     else:
-        print('Timer 1')
+        timer = '1'
+    engine.say(timer) 
+    engine.runAndWait() 
 
 def examine(color, text, batteries, serial, label):
     
