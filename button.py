@@ -1,4 +1,4 @@
-import listen as listen
+import speak as speak
 import numpy as np
 import pyttsx3
 import time
@@ -6,8 +6,8 @@ import time
 engine = pyttsx3.init()
 
 def release(color, text):
-    time.sleep(5)
-    strip = listen.gettext()
+    time.sleep(3)
+    strip = speak.gettext()
     if(strip=='blue'):
         timer = '4'
     elif(strip=='white'):

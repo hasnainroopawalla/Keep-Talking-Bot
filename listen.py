@@ -44,7 +44,7 @@ def gettext():
     if guess["transcription"]:
         text = guess["transcription"]
         print("You said:",text)
-       
+        
     ##    speak(text)
         return text
     
