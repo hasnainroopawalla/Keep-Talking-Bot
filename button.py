@@ -6,9 +6,9 @@ import time
 engine = pyttsx3.init()
 
 def release(color, text):
-    time.sleep(2)
-    print('Press and hold, what is the Strip Color?')
-    strip = speak.gettext()
+    
+    print()
+    strip = speak.gettext('Press and hold, what is the Strip Color?')
     if(strip=='blue'):
         timer = '4'
     elif(strip=='white'):

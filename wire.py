@@ -1,5 +1,8 @@
 import numpy as np
 import speak as speak
+import pyttsx3
+
+engine = pyttsx3.init()
 
 def examine(wires, batteries, serial):
     cut=0
@@ -11,8 +14,15 @@ def examine(wires, batteries, serial):
                 cut=i+1
                 break
             
-        if(wires.count('R')==0):
-            cut=2
+        if(wires.count('R')==0):   # Cut second wire
+            f = 0
+            for i in range(0,6):
+                if(wires[i]!='E'):
+                    if(f==1):     
+                        cut=i+1
+                        break
+                    else:
+                        f+=1
  
         elif(wires.count('B')>1):
             for i in range(5,-1,-1):
@@ -132,7 +142,9 @@ def examine(wires, batteries, serial):
                     else:
                         f+=1
 
-    print('cut: wire at position',cut)
+    engine.say('Cut wire at position '+str(cut)) 
+    engine.runAndWait() 
+    
                 
     
 def getscene():
@@ -152,7 +164,6 @@ def getscene():
     print()
     w6 = speak.gettext('Wire 6?')
 
-    print(w1,w2,w3,w4,w5,w6)
     wires.append(color_map[w1])
     wires.append(color_map[w2])
     wires.append(color_map[w3])
