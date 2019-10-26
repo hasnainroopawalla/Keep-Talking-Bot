@@ -1,10 +1,10 @@
 import speech_recognition as sr
 
-def gettext():
+def gettext(qstn):
     r = sr.Recognizer()
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source, duration=1)
-        print("Speak now")
+        print(qstn+" ..Speak now")
         audio = r.listen(source,phrase_time_limit=5)
     try:
         response = r.recognize_google(audio)
@@ -12,5 +12,3 @@ def gettext():
         return response
     except:
         raise Exception("Audio Not Captured")
-
-

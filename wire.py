@@ -1,4 +1,5 @@
 import numpy as np
+import speak as speak
 
 def examine(wires, batteries, serial):
     cut=0
@@ -136,15 +137,28 @@ def examine(wires, batteries, serial):
     
 def getscene():
     wires = []
+    color_map = {'blue':'B','red':'R','yellow':'Y','black':'BL','white':'W','nothing':'E'}
 
-    #Speech to Text here
+    print()
+    w1 = speak.gettext('Wire 1?')
+    print()
+    w2 = speak.gettext('Wire 2?')
+    print()
+    w3 = speak.gettext('Wire 3?')
+    print()
+    w4 = speak.gettext('Wire 4?')
+    print()
+    w5 = speak.gettext('Wire 5?')
+    print()
+    w6 = speak.gettext('Wire 6?')
 
-    wires.append(input('Wire 1:'))
-    wires.append(input('Wire 2:'))
-    wires.append(input('Wire 3:'))
-    wires.append(input('Wire 4:'))
-    wires.append(input('Wire 5:'))
-    wires.append(input('Wire 6:'))
+    print(w1,w2,w3,w4,w5,w6)
+    wires.append(color_map[w1])
+    wires.append(color_map[w2])
+    wires.append(color_map[w3])
+    wires.append(color_map[w4])
+    wires.append(color_map[w5])
+    wires.append(color_map[w6])
     return wires
 
 

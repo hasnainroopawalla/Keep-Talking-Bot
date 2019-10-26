@@ -6,7 +6,8 @@ import time
 engine = pyttsx3.init()
 
 def release(color, text):
-    time.sleep(3)
+    time.sleep(2)
+    print('Press and hold, what is the Strip Color?')
     strip = speak.gettext()
     if(strip=='blue'):
         timer = '4'
@@ -25,19 +26,19 @@ def examine(color, text, batteries, serial, label):
         release(color, text)
 
     elif(batteries>1 and text=='detonate'):
-        print('Press and release immediately')
+        print('\nPress and release immediately')
     
     elif(color=='W' and label=='car'):
         release(color, label)
     
     elif(batteries>2 and label=='frk'):
-        print('Press and release immediately')
+        print('\nPress and release immediately')
     
     elif(color=='Y'):
         release(color, text)
 
     elif(color=='R' and text=='hold'):
-        print('Press and release immediately')
+        print('\nPress and release immediately')
     
     else:
         release(color, text)
@@ -46,9 +47,11 @@ def examine(color, text, batteries, serial, label):
 def getscene():
 
     #Speech to Text here
+    color_map = {'blue':'B','red':'R','yellow':'Y','black':'BL','white':'W','nothing':'E'}
 
-    color = input('Button Color: ')
-    text = input('Button Text: ')   
+    color = speak.gettext('Button Color?')
+    text = speak.gettext('Button Text?')
+    color = color_map[color]   
     return color, text
 
 
