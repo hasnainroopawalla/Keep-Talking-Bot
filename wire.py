@@ -152,17 +152,17 @@ def getscene():
     color_map = {'blue':'B','red':'R','yellow':'Y','black':'BL','white':'W','nothing':'E'}
 
     print()
-    w1 = speak.gettext('Wire 1?')
+    w1 = speak.gettext('Wire 1?', 1)
     print()
-    w2 = speak.gettext('Wire 2?')
+    w2 = speak.gettext('Wire 2?', 1)
     print()
-    w3 = speak.gettext('Wire 3?')
+    w3 = speak.gettext('Wire 3?', 1)
     print()
-    w4 = speak.gettext('Wire 4?')
+    w4 = speak.gettext('Wire 4?', 1)
     print()
-    w5 = speak.gettext('Wire 5?')
+    w5 = speak.gettext('Wire 5?', 1)
     print()
-    w6 = speak.gettext('Wire 6?')
+    w6 = speak.gettext('Wire 6?', 1)
 
     wires.append(color_map[w1])
     wires.append(color_map[w2])

@@ -8,7 +8,7 @@ engine = pyttsx3.init()
 def release(color, text):
     
     print()
-    strip = speak.gettext('Press and hold, what is the Strip Color?', 1)
+    strip = speak.gettext('Press and hold, what is the Strip Color?')
     if(strip=='blue'):
         timer = '4'
     elif(strip=='white'):
@@ -47,14 +47,15 @@ def examine(color, text, batteries, serial, label):
 def getscene():
 
     #Speech to Text here
-    color_map = {'blue':'B','red':'R','yellow':'Y','black':'BL','white':'W','nothing':'E'}
+    symbol_master = [['lollipop','a','Lambda','n','dinosaur','h','moon'],
+                     ['']]
 
-    color = speak.gettext('Button Color?', 1)
-    text = speak.gettext('Button Text?', 1)
+    color = speak.gettext('Button Color?')
+    text = speak.gettext('Button Text?')
     color = color_map[color]   
-    return color, text
+    return symbols
 
 
 def solve(batteries, serial, label):
-    color, text = getscene()
+    symbols = getscene()
     examine(color, text, batteries, serial, label)
